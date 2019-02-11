@@ -1,0 +1,505 @@
+$primary-font: 'Hind Siliguri', sans-serif;
+$secondary-font: 'Raleway', sans-serif;
+
+$red: #d12838;
+$dark-red: #981421;
+$dark-blue: #191e26;
+$pastel-yellow: #d6d3c2;
+$light-pastel-yellow: #ebeae4;
+
+::selection
+{
+	background: $red;
+	color: #FFF;
+}
+
+@mixin transition($time){
+-webkit-transition: all $time ease;
+  -moz-transition: all $time ease;
+  -ms-transition: all $time ease;
+  transition: all $time ease;
+}
+
+a 
+{
+	text-decoration: none;
+	color: inherit;
+}
+
+*
+{
+	font-family: $primary-font;
+}
+
+body 
+{
+	position: relative;
+    margin: 0;
+    background: #EEE;
+}
+
+header
+{
+	width: 100%;
+	height: 120px;
+	background: #FFF;
+	position: fixed;
+	top: 0;
+	z-index: 500;
+	box-shadow: 0px 0px 40px rgba(0,0,0,.05);
+}
+
+.logo
+{
+	position: absolute;
+	top: 50%;
+	left: 40px;
+	height: 30px;
+	width: auto;
+	transform: translate(0%,-50%);
+
+	img 
+	{
+		height: 100%;
+	}
+}
+
+.tabs
+{
+	position: absolute;
+	right: 40px;
+	top: 50%;
+	transform: translate(0,-50%);
+	width: calc(100% - 80px);
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+
+	.tab 
+	{
+		font-size: .7em;
+		font-family: $secondary-font;
+		text-transform: uppercase;
+		padding: 10px 10px;
+		margin: 0px 5px;
+		font-weight: 700;
+		letter-spacing: 1px;
+		cursor: pointer;
+		border-radius: 5px;
+		color: #444;
+		@include transition(.5s);
+		
+		.fa 
+		{
+			margin-right: 10px;
+		}
+	}
+
+	.tab:hover
+	{
+		background: rgba(0,0,0,.1);
+	}
+
+	.current
+	{
+		background: $red !important;
+		color: #FFF !important;
+	}
+
+	.disabled
+	{
+		pointer-events: none;
+		color: rgba(0,0,0,.2);
+	}
+}
+
+.main
+{
+	margin-top: 120px;
+}
+
+section
+{
+	padding: 75px 0px;
+	display: none;
+}
+
+.active
+{
+	display: block;
+}
+
+.message
+{
+	font-size: 1.25em;
+}
+
+button 
+{
+	outline: none;
+	border: none;
+	padding: 10px 20px;
+	background: $red;
+	color: #FFF;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 600;
+	margin-top: 15px;
+	cursor: pointer;
+	border-radius: 5px;
+	@include transition(.5s);
+}
+
+button:hover
+{
+	background: $dark-red;
+}
+
+.dashboard
+{
+	h2
+	{
+		font-family: $secondary-font;
+		text-transform: uppercase;
+		color: rgba(0,0,0,.3);
+		letter-spacing: 4px;
+		font-size: 1.5em;
+		font-weight: 700;
+	}
+
+	.account-status
+	{
+		width: 100%;
+		margin: 40px auto;
+		border-radius: 20px;
+		background: #FFF;
+		padding: 10px;
+		//box-shadow: 0px 0px 10px rgba(0,0,0,.05);
+
+		.tile-wrapper
+		{
+			position: relative;
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: flex-start;
+		}
+
+		.tile:after
+		{
+			position: absolute;
+			top: 50%;
+			right: 0px;
+			color: #DDD;
+			font-size: 1.5em;
+			transform: translate(100%,-50%);
+			content: '\279C';
+		}
+
+		.disabled
+		{
+			opacity: 0.6;
+		}
+
+		.tile:last-of-type:after
+		{
+			display: none;
+		}
+
+		.tile 
+		{
+			position: relative;
+			width: 120px;
+			padding: 10px;
+
+			.main-icon 
+			{
+				font-size: 2.5em;
+				color: $red;
+				border-radius: 10px;
+				text-align: center;
+			}
+
+			.tile-desc
+			{
+				text-align: center;
+				color: #555;
+				font-weight: 600;
+			}
+
+			.status
+			{
+				text-align: center;
+				color: #AAA;
+				font-weight: 300;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+			}
+
+			.hide
+			{
+				visibility: hidden;
+			}
+		}
+	}
+}
+
+.question
+{
+
+}
+
+.payment
+{
+	iframe
+	{
+		border-radius: 40px;
+		margin-top: 50px;
+	}
+}
+
+.title
+{
+	font-size: 2em;
+	font-weight: 600;
+	color: #555;
+}
+
+.content
+{
+	width: 60%;
+	margin: auto;
+}
+
+.question-text
+{
+	font-family: $primary-font;
+	font-size: 1em;
+	color: #666;
+}
+
+.error-text
+{
+	font-family: $primary-font;
+	font-size: .9em;
+	color: #888;
+	margin: 20px 0px;
+}
+
+textarea,input
+{
+	width: 100%;
+	outline: none;
+	border: 2px solid transparent;
+	padding: 20px;
+	background: #FFF;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.05);
+	border-radius: 15px;
+	margin: 20px 0px;
+	@include transition(.5s);
+}
+
+textarea:focus,input:focus
+{
+	border: 2px solid $red;
+}
+
+input[type="submit"]
+{
+	position: relative;
+	left: 50%;
+	transform: translate(-50%,0%);
+	background: $red;
+	color: #FFF;
+	width: 150px;
+	padding: 15px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover
+{
+	background: $dark-red;
+}
+
+.settings
+{
+
+}
+
+.subtitle
+{
+	font-size: 1.2em;
+	color: #888;
+}
+
+form
+{
+	margin: 10px 0px;
+}
+
+.button-width
+{
+	display: block;
+	max-width: 400px;
+}
+
+input.align-fix
+{
+	position: relative;
+	left: 0%;
+	transform: translate(0,0);
+}
+
+.show-ticket
+{
+	display: block !important;
+}
+
+hr.dashed
+{
+	border: 1px dashed #DDD;
+}
+
+.ticket
+{
+	width: 350px;
+	background: #FFF;
+	padding-top: 50px;
+	padding-bottom: 100px;
+	margin: auto;
+	border-radius: 25px;
+	box-shadow: 10px 10px 0px rgba(0,0,0,.05);
+	display: none;
+
+	.title 
+	{
+		text-align: center;
+		margin-bottom: 20px;
+		color: $red;
+		font-size: 1.5em;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+
+	.serialno
+	{
+		font-size: 4em;
+		text-align: center;
+		font-weight: 600;
+		color: #000;
+		margin-bottom: 25px;
+	}
+
+	.fullname
+	{
+		font-size: 1.5em;
+		text-align: center;
+		font-weight: 600;
+		color: #000;
+	}
+
+	.email
+	{
+		font-size: 1em;
+		text-align: center;
+		font-weight: 600;
+		color: #555;
+	}
+
+	.phone
+	{
+		font-size: 1em;
+		text-align: center;
+		font-weight: 600;
+		color: #555;
+	}
+
+}
+
+@media screen and (max-width: 1000px) {
+
+	.content
+	{
+		width: 80%;
+	}
+
+	.logo
+	{
+		left: 20px;
+	}
+
+	.tabs
+	{
+		right: 20px;
+
+		.tab 
+		{
+			margin: 0;
+			letter-spacing: 0px;
+			font-size: .65em;
+		}
+	}
+
+}
+
+@media screen and (max-width: 700px) {
+
+	.tile:after
+	{
+		display: none;
+	}
+
+	.main
+	{
+		margin-top: 250px;
+	}
+
+	.content
+	{
+		width: calc(90% - 60px);
+	}
+
+	input,textarea
+	{
+		padding: 15px;
+		width: 80%;
+		border: 0px !important;
+		-webkit-appearance: none;
+	}
+
+	header
+	{
+		height: 250px;
+	}
+
+	.logo
+	{
+		left: 50%;
+		top: 10px;
+		transform: translate(-50%,0);
+	}
+
+	.tabs 
+	{
+		left: 50%;
+		top: 70px;
+		transform: translate(-50%,0);
+
+		.tab 
+		{
+			width: 90%;
+
+		}
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+
+}
+
+@media screen and (max-width: 400px) {
+
+}

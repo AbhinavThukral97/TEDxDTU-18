@@ -1,0 +1,2 @@
+- img/Media folder changed
+- partners.html changed

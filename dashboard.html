@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TEDxDTU &middot; Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/dashboard.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+	<link rel="icon" href="favicon.png">
+	<script type="text/javascript" src="js/dashboard.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:300,400,500,600|Raleway:300,400,600,700" rel="stylesheet">
+</head>
+<body>
+<header>
+	<div class="logo"><img src="img/logoBlack.png"></div>
+	<div class="tabs">
+		<div class="mydash tab current"><i class="fa fa-desktop" aria-hidden="true"></i> My Dashboard</div>
+		<div class="ques tab"><i class="fa fa-list" aria-hidden="true"></i> Questionnaire</div>
+		<div class="pay tab"><i class="fa fa-credit-card" aria-hidden="true"></i> Payment</div>
+		<div class="setting tab"><i class="fa fa-cogs" aria-hidden="true"></i> Settings</div>
+		<div class="tab"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</div>
+	</div>
+</header>
+<div class="main">
+	<section class="dashboard active">
+		<div class="content">
+			<div class="title">Hello Abhinav!</div>
+			<p>To apply for TEDxDTU 2018, please fill the questionnaire form.</p>
+			<button>Show Ticket</button>
+			<div class="account-status">
+				<div class="tile-wrapper">
+					<div class="tile">
+						<div class="main-icon"><i class="fa fa-question" aria-hidden="true"></i></div>
+						<div class="tile-desc">Questionnaire</div>
+						<div class="status">Pending</div>
+					</div>
+					<div class="tile">
+						<div class="main-icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
+						<div class="tile-desc">Application</div>
+						<div class="status">Pending</div>
+					</div>
+					<div class="tile disabled">
+						<div class="main-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+						<div class="tile-desc">Payment</div>
+						<div class="status hide">Complete</div>
+					</div>
+					<div class="tile disabled">
+						<div class="main-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+						<div class="tile-desc">Ticket</div>
+						<div class="status hide">Complete</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</section>
+	<section class="question">
+		<div class="content">
+			<div class="title">Questionnaire</div>
+			<form>
+			<div class="error-text">All fields must be filled.</div>
+			<div class="question-text">Why do you want to attend TEDxDTU 2018?</div>
+			<textarea placeholder="Type your answer here"></textarea>
+			<div class="question-text">How did you come to know about TEDxDTU 2018?</div>
+			<textarea placeholder="Type your answer here"></textarea>
+			<div class="question-text">According to you, what ideas are worth spreading and why?</div>
+			<textarea placeholder="Type your answer here"></textarea>
+			<input type="submit" value="Apply">
+			</form>
+		</div>
+	</section>
+	<section class="payment">
+		<div class="content">
+			<div class="title">Payment</div>
+		
+			<iframe src="https://www.townscript.com/widget/tedxdtu-2018-142424" frameborder="0" height="500" width="80%"></iframe>
+			
+		</div>
+	</section>
+	<section class="settings">
+		<div class="content">
+			<div class="title">Settings</div>
+			<form>
+			<div class="subtitle">Change Password</div>
+			<input class="button-width" type="password" placeholder="Old Password">
+			<input class="button-width" type="password" placeholder="New Password">
+			<input class="button-width" type="password" placeholder="Re-enter New Password">
+			<input class="align-fix" type="submit" value="Change Password">
+			</form>
+		</div>
+	</section>
+</div>
+</body>
+</html>

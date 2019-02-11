@@ -1,0 +1,404 @@
+$primary-font: 'Hind Siliguri', sans-serif;
+$secondary-font: 'Raleway', sans-serif;
+
+$red: #d12838;
+$dark-blue: #191e26;
+$pastel-yellow: #d6d3c2;
+$light-pastel-yellow: #ebeae4;
+
+::selection
+{
+	background: $red;
+	color: #FFF;
+}
+
+@mixin transition($time){
+-webkit-transition: all $time ease;
+  -moz-transition: all $time ease;
+  -ms-transition: all $time ease;
+  transition: all $time ease;
+}
+
+.main
+{
+	position: relative;
+	height: calc(100vh - 400px);
+	background-color: #1c212a;
+	padding: 200px 0px;
+	background-image: url('../img/Landing_Back.png');
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center bottom;
+	z-index: 10;
+}
+
+.content-big
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 80%;
+	margin: auto;
+
+	hr 
+	{
+		margin-top: 0;
+		margin-bottom: 20px;
+		margin-left: 0;
+		background: $red;
+		border: 3px solid $red;
+	}
+}
+
+h3
+{
+	font-size: 3em;
+	color: #FFF;
+	font-family: $primary-font;
+	font-weight: 600;
+	margin-bottom: 0;
+	width: 75%;
+}
+
+p.subtext
+{
+	font-size: .9em;
+	color: rgba(255,255,255,1);
+	font-family: $primary-font;
+	width: 50%;
+	margin-top: 0px;
+}
+
+button.more 
+{
+	border: 4px solid rgba(255,255,255,.05);
+	color: #FFF;
+	cursor: pointer;
+	font-size: .85em;
+	margin-top: 20px;
+	@include transition(.5s);
+
+	.fa 
+	{
+		margin-left: 10px;
+		transform: scale(.9);
+	}
+}
+
+button.more:hover
+{
+	border: 4px solid $red;
+	background: $red;
+}
+
+.white-font
+{
+	color: #FFF !important;
+}
+
+.countdown
+{
+	width: 100%;
+	background: $dark-blue;
+	padding-top: 150px;
+	position: relative;
+}
+
+.cd-wrapper
+{
+	margin-top: 40px;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	.cd-element
+	{
+		width: 70px;
+		padding: 20px;
+
+		.number
+		{
+			width: 100%;
+			font-size: 3em;
+			color: #FFF;
+			font-weight: 300;
+			text-align: center;
+			margin-bottom: 0px;
+			font-family: $primary-font;
+		}
+
+		.number-tag 
+		{
+			width: 100%;
+			text-align: center;
+			color: $red;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			font-size: .9em;
+			font-weight: 600;
+			font-family: $primary-font;
+		}
+	}
+}
+
+.down-arrow
+{
+	width: 50px;
+	height: 50px;
+	background: $red;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	border: 10px solid rgba(0,0,0,.25);
+	cursor: pointer;
+	transform: translate(-50%,50%) rotate(45deg);
+
+	.zee-arrow
+	{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%) rotate(-45deg);
+		color: #FFF;
+		font-size: 1em;
+	}
+}
+
+.no-space
+{
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.anchor
+{
+	padding-bottom: 2px;
+	border-bottom: 2px solid rgba(0,0,0,.1);
+	@include transition(.5s);
+	cursor: pointer;
+	width: 100px;
+	margin: auto;
+
+	.fa 
+	{
+		margin-right: 10px;
+		color: rgba(0,0,0,.5);
+	}
+}
+
+.anchor:hover
+{
+	border-bottom: 2px solid $red;
+}
+
+.align-center
+{
+	text-align: center;
+}
+
+.about
+{
+	padding-top: 125px;
+}
+
+.speakers
+{
+	background-color: $dark-blue;
+	//background-image: url('../img/Landing_Speakers_Back.png');
+	background-position: center bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 100px 0px;
+
+	hr 
+	{
+		background: $red;
+		border: 2px solid $red;
+		margin-bottom: 20px;
+		margin-left: 0;
+	}
+
+	h2
+	{
+		width: 100%;
+	}
+}
+
+.align-left
+{
+	text-align: left;
+}
+
+button.img-back
+{
+	border: none;
+	background: rgba(255,255,255,.05);
+	border-radius: 10px;
+	color: #FFF;
+	text-align: center;
+	margin: 0;
+	padding: 15px 35px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	@include transition(.5s);
+}
+
+button.img-back:hover
+{
+	background: rgba(255,255,255,.1);
+}
+
+.sub-title
+{
+	width: 100%;
+	text-align: left;
+	color: #FFF;
+	font-style: italic;
+	font-size: 1.3em;
+	font-weight: 300;
+	font-family: $primary-font;
+	margin-bottom: 0px;
+}
+
+.logo-wrapper
+{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	img 
+	{
+		height: 100px;
+		padding: 20px;
+	}
+}
+
+.contact
+{
+	background: #f7f7f7;
+	overflow: hidden;
+
+	.contact-wrapper
+	{
+		margin-top: 30px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.contact-card 
+		{
+			padding: 20px;
+			width: 240px;
+
+			.title 
+			{
+				color: $red;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				margin-bottom: 20px;
+				font-size: 1em;
+				font-weight: 600;
+				font-family: $primary-font;
+			}
+
+			.details
+			{
+				color: #555;
+				font-size: .9em;
+				font-weight: 400;
+				font-family: $primary-font;
+			}
+
+			.social
+			{
+				position: relative;
+				left: -20px;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: flex-start;
+				justify-content: flex-start;
+
+				.fa 
+				{
+					padding: 15px;
+					color: $dark-blue;
+					@include transition(.5s);
+					cursor: pointer;
+				}
+
+				.fa:hover
+				{
+					color: $red;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1000px) {
+
+h3
+{
+	font-size: 2.5em;
+	width: 75%;
+}
+
+p.subtext
+{
+	font-size: .9em;
+	width: 75%;
+}
+
+}
+
+@media screen and (max-width: 700px) {
+
+.main
+{
+	position: relative;
+	height: calc(100vh - 400px);
+	background-color: #1c212a;
+	padding: 200px 0px;
+	background-image: url('../img/Landing_Back_Mobile.png');
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center bottom;
+	z-index: 10;
+}
+
+h3
+{
+	font-size: 2em;
+	width: 100%;
+}
+
+p.subtext
+{
+	font-size: .8em;
+	width: 100%;
+}
+
+button.more 
+{
+	padding: 10px 20px;
+	border: 4px solid rgba(255,255,255,.05);
+	color: #FFF;
+	cursor: pointer;
+	font-size: .75em;
+	margin-top: 10px;
+}
+
+}
+
+@media screen and (max-width: 500px) {
+
+}
+
+@media screen and (max-width: 400px) {
+
+}
